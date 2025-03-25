@@ -13,8 +13,8 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v2
 
-     - name: Configurar ambiente
-       run: echo "Ambiente configurado com sucesso!"
+      - name: Configurar ambiente
+        run: echo "Ambiente configurado com sucesso!"
 
-    - name: Executar tarefa simples
-      run: echo "Teste executado com sucesso!"
+      - name: Executar tarefa simples
+        run: echo "Teste executado com sucesso!"
