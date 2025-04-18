@@ -1,64 +1,63 @@
-# Projeto de DevOps
+# DevOps Project
 
-Esse projeto configura uma aplicação em Kubernetes com monitoramento utilizando Prometheus e Grafana para visualização das métricas.
+This project sets up a Java application deployed on **Kubernetes** with monitoring using **Prometheus** and **Grafana** for metric visualization.
 
-Nesse projeto eu aprendi como 
-1 - **Containerizar** uma aplicação com o **Docker**,
-2 - **Implantar** a aplicação em um cluster **Kubernetes**,
-3 - **Monitorar** a aplicação com o **Prometheus**,
-4 - **Visualizar** as métricas no **Grafana**.
+Through this project, I learned how to:  
+1. **Containerize** an application using **Docker**,  
+2. **Deploy** the application on a **Kubernetes** cluster,  
+3. **Monitor** the application with **Prometheus**,  
+4. **Visualize** metrics using **Grafana**.
 
-### Passo básico:
-✅ Criar o repositório no **GitHub** para começar o **Projeto de DevOps**
-
----
-
-## Passos realizados no projeto
-
-#### 1 - Criação de um pipeline simples no GitHub Actions
-O objetivo foi trabalhar com o conceito de **CI/CD**, o aplicando de forma prática no **GitHub Actions**. 
-
-Para isso foi criado uma **pipeline de CI** simples em .yml que imprime mensagens e roda automaticamente toda vez que um push na branch main é realizado. 
+### Initial Step:
+✅ Create the repository on **GitHub** to kick off the **DevOps Project**
 
 ---
 
-#### 2 - Containerização da Aplicação em Java com Docker
-O objetivo foi colocar a aplicação dentro de um contêiner para garantir que ele rode de forma consistente em qualquer ambiente. 
- 
-Para isso foi criado uma `Dockerfile` para definir a construção da imagem Docker, gerando e executando a imagem localmente e um arquivo .dockerignore para ignorar os arquivos desnecessários.
+## Project Breakdown
+
+### 1 - Creating a Basic Pipeline with GitHub Actions
+The goal was to explore **CI/CD** concepts by applying them using **GitHub Actions**.
+
+A simple **CI pipeline** was built in `.yml` that prints log messages and is triggered automatically every time a push is made to the main branch.
 
 ---
 
-#### 3 - Subir a Aplicação no Kubernetes
-O objetivo foi a implantação da aplicação em um cluster **Kubernetes** para gerenciar e escalar a execução automaticamente.
+### 2 - Containerizing the Java Application with Docker
+The objective was to package the application in a **Docker container** to ensure consistency across environments.
 
-Para isso foi criado um arquivo de configuração `deployment.yaml` para definir como os pods serão criados e configurados
-
----
-
-#### 4 - Criação de uma pipeline CI/CD com GitHub Actions
-O objetivo foi criar uma pipeline que sempre que houvesse um push na main o código do repositório fosse clonado, configurasse o `Docker Buildx`, construisse a imagem Docker e testasse o contêiner rodando com o java -version.
-
-Para isso foi criado um workflow no GitHub Actions com essa pipeline em `.yml`.
+A `Dockerfile` was created to define how to build the image, which was then built and executed locally. A `.dockerignore` file was also added to avoid unnecessary files.
 
 ---
 
-#### 5 - Instalação do Prometheus e Grafana para Monitoramento
-O objetivo foi monitorar a aplicação com o Prometheus e visualizar os dados com o Grafana. 
+### 3 - Deploying the Application on Kubernetes
+The goal was to deploy the application to a **Kubernetes cluster** to manage and scale it automatically.
 
-Para isso foi utilizado **Helm**, uma ferramenta de gerenciamento de pacotes para Kubernetes, para instalar o Prometheus e Grafana.
-
----
-
-#### 6 - Configuração da conexão entre Grafana e Prometheus
-O objetivo foi garantir a integração das ferramentas para que o Grafana conseguise acessar as métricas do Prometheus corretamente.
-
-Para isso foi utilizado o `nslookup` e ajustes na configuração de DNS dentro do Kubernetes.
+A `deployment.yaml` configuration file was created to define how the pods should be created and managed.
 
 ---
 
-#### 7 - Resultado final
-Uma aplicação simples em Java rodando no **Kubernetes** com o **Prometheus** coletando as métricas e o Grafana visualizando os dados em dashboards intuitivos.
+### 4 - Building a CI/CD Pipeline with GitHub Actions
+The goal was to create a **CI/CD pipeline** that triggers on each push to the `main` branch, clones the repo, sets up `Docker Buildx`, builds the Docker image, and runs the container to check `java -version`.
 
+A custom GitHub Actions workflow was created using `.yml` to automate the entire process.
 
-Esse fluxo resultou em uma solução completa de monitoramento e visualização para garantir a saúde da aplicação criada em tempo real, com automação e integração contínua.
+---
+
+### 5 - Installing Prometheus and Grafana for Monitoring
+The goal was to monitor the application with **Prometheus** and visualize metrics with **Grafana**.
+
+**Helm** (a Kubernetes package manager) was used to install both Prometheus and Grafana into the cluster.
+
+---
+
+### 6 - Configuring Integration Between Grafana and Prometheus
+The goal was to ensure **Grafana** could access and visualize **Prometheus** metrics.
+
+`nslookup` and DNS configuration tweaks were performed inside the Kubernetes environment to establish proper communication between the services.
+
+---
+
+### 7 - Final Result
+A simple **Java application** running on **Kubernetes**, monitored in real-time by **Prometheus** and visualized through **Grafana** dashboards.
+
+This end-to-end setup provides a complete monitoring and visualization solution, ensuring the health of the application through real-time observability, automation, and continuous integration.
